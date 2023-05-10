@@ -1,24 +1,39 @@
 {
+  "name": "table-app-project",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "react-router-dom": "^6.11.1"
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.11.1",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
   },
-  "name": "table-frontend-project",
-  "description": "Frontend repo of the module 4 snack-a-log project",
-  "version": "1.0.0",
-  "main": "App.js",
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/LakishaTrusty-9-3/table-frontend-project.git"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/LakishaTrusty-9-3/table-frontend-project/issues"
-  },
-  "homepage": "https://github.com/LakishaTrusty-9-3/table-frontend-project#readme"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
