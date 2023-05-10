@@ -1,5 +1,24 @@
 {
   "dependencies": {
     "react-router-dom": "^6.11.1"
-  }
+  },
+  "name": "table-frontend-project",
+  "description": "Frontend repo of the module 4 snack-a-log project",
+  "version": "1.0.0",
+  "main": "App.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LakishaTrusty-9-3/table-frontend-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LakishaTrusty-9-3/table-frontend-project/issues"
+  },
+  "homepage": "https://github.com/LakishaTrusty-9-3/table-frontend-project#readme"
 }
