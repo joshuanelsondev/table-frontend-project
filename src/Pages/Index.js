@@ -1,3 +1,9 @@
-export default function About() {
-  return <div></div>;
+import Dishes from "../Components/Dishes";
+
+export default function Index() {
+  return (
+    <div className="">
+      <Dishes />
+    </div>
+  )
 }
