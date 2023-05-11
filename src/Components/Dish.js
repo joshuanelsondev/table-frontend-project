@@ -6,7 +6,11 @@ export default function Dish({ dish }) {
         <h1>{dish.calories}</h1>
         <h1>{dish.category}</h1>
         <h1>{dish.portions}</h1>{" "} */}
-        <img src={dish.image_url} alt={dish.name} className="h-[450px] w-[450px] rounded-full cursor-pointer hover:outline outline-8 outline-white"/>
+        <img
+          src={dish.image_url}
+          alt={dish.name}
+          className="h-[450px] w-[450px] rounded-full cursor-pointer  hover:outline outline-8 outline-white"
+        />
       </div>
     );
 }
