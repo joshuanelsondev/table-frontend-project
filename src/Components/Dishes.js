@@ -20,7 +20,7 @@ export default function Dishes() {
 
     return (
         <div className="">
-            <div className="grid grid-cols-2 gap-8 m-8 w-full place-items-center"> 
+            <div className="grid md:grid-cols-2 gap-y-8 m-8 w-full place-items-center sm:grid-cols-1"> 
                 {dishes.map((dish) => {
                     return(
                     <Dish key={dish.id} dish={dish} />

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Dish({ dish }) {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -9,21 +10,20 @@ export default function Dish({ dish }) {
 
   return (
     <div
-      className={`relative bg-primary flex justify-center items-center rounded-full h-[400px] w-[400px] ${
-        isFlipped ? "transform rotate-y-180" : ""
-      }`}
+      className={`relative bg-primary flex justify-center items-center rounded-full h-[400px] w-[400px] `}
     >
       {!isFlipped && (
-        <img
-          src={dish.image_url}
-          alt={dish.name}
-          className="absolute h-[200px] w-auto rounded cursor-pointer hover:outline outline-4 outline-white"
-          onClick={handleClick}
-        />
+        <Link to={`${dish.image_url}`}>
+          <img
+            src={dish.image_url}
+            alt={dish.name}
+            className="h-[200px] w-auto rounded cursor-pointer hover:outline outline-4 outline-white"
+          />
+        </Link>
       )}
 
       {isFlipped && (
-        <div className="absolute flex flex-col items-center gap-8">
+        <div className="absolute flex flex-col items-center gap-4">
           <h2 className="font-bold text-xl text-white">{dish.name}</h2>
           <div className="text-white font-semibold">
             <p>{dish.category}</p>
@@ -36,8 +36,29 @@ export default function Dish({ dish }) {
               {dish.portions}
             </p>
           </div>
-          <button onClick={handleClick} className="bg-secondary rounded-3xl p-2 text-sm text-primary font-bold">View Image</button>
+          <div className="flex gap-2">
+            <button
+              onClick={handleClick}
+              className="bg-secondary rounded-3xl p-2 text-sm text-primary font-bold w-24"
+            >
+              View Image
+            </button>
+            <Link
+              to={`/dishes/${dish.id}/edit`}
+              className="bg-secondary rounded-3xl p-2 text-sm text-primary font-bold w-24 text-center"
+            >
+              Edit
+            </Link>
+          </div>
         </div>
+      )}
+      {!isFlipped && (
+        <button
+          onClick={handleClick}
+          className="bg-secondary rounded-3xl p-2 text-sm text-primary font-bold w-fit absolute bottom-10"
+        >
+          View Details
+        </button>
       )}
     </div>
   );
