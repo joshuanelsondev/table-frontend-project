@@ -10,7 +10,7 @@ export default function Nav () {
             The Table
           </Link>
         </div>
-        <div className="">
+        <div className="mr-20">
           <Link to="/about" className="font-semibold mx-4 hover:text-secondary">
             About
           </Link>
