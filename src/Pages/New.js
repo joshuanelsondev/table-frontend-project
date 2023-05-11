@@ -1,3 +1,6 @@
+import DishNewForm from '../Components/DishNewForm'
 export default function New() {
-  return <div></div>;
+  return <div>
+  < DishNewForm/>;
+  </div>
 }
