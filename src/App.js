@@ -16,9 +16,9 @@ import Nav from "./Pages/Nav";
 
 function App () {
     return (
-      <div className="app">
+      <div className="app w-full h-full">
         <Router>
-          <div className="app-wrapper">
+          <div className="app-wrapper w-full h-full">
             <Nav />
             <Routes>
               <Route path="/" element={<Home />} />
