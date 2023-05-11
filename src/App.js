@@ -16,16 +16,16 @@ import Nav from "./Pages/Nav";
 
 function App () {
     return (
-      <div className="app">
+      <div className="app w-full h-full">
         <Router>
-          <div className="app-wrapper">
+          <div className="app-wrapper w-full h-full">
             <Nav />
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/dishes/:id" element={<Show />} />
-              <Route path="/dishes" element={<Index />} />
-              <Route path="/dishes/new" element={<New />} />
               <Route path="/about" element={<About />} />
+              <Route path="/dishes" element={<Index />} />
+              <Route path="/dishes/:id" element={<Show />} />
+              <Route path="/dishes/new" element={<New />} />
               <Route path="/dishes/:id/edit" element={<Edit />} />
               <Route path="*" element={<FourOFour />} />
             </Routes>
