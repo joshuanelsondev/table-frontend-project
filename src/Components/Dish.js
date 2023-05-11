@@ -27,6 +27,9 @@ export default function Dish({ dish }) {
           <h2 className="font-bold text-xl text-white">{dish.name}</h2>
           <div className="text-white font-semibold">
             <p>{dish.category}</p>
+            {dish.is_vegan && (
+              <p>Vegan</p>
+            )}
             <p>
               <span className="text-secondary font-bold">Calories: </span>
               {dish.calories}
@@ -39,13 +42,13 @@ export default function Dish({ dish }) {
           <div className="flex gap-2">
             <button
               onClick={handleClick}
-              className="bg-secondary rounded-3xl p-2 text-sm text-primary font-bold w-24"
+              className="bg-secondary rounded-3xl p-2 text-sm text-primary font-bold w-24 hover:bg-gray hover:text-white"
             >
               View Image
             </button>
             <Link
               to={`/dishes/${dish.id}/edit`}
-              className="bg-secondary rounded-3xl p-2 text-sm text-primary font-bold w-24 text-center"
+              className="bg-secondary rounded-3xl p-2 text-sm text-primary font-bold w-24 text-center hover:bg-gray hover:text-white"
             >
               Edit
             </Link>
@@ -55,7 +58,7 @@ export default function Dish({ dish }) {
       {!isFlipped && (
         <button
           onClick={handleClick}
-          className="bg-secondary rounded-3xl p-2 text-sm text-primary font-bold w-fit absolute bottom-10"
+          className="bg-secondary rounded-3xl p-2 text-sm text-primary font-bold w-fit absolute bottom-10 hover:bg-gray hover:text-white"
         >
           View Details
         </button>
