@@ -1,35 +1,41 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import axios from "axios";
+
+const API = process.env.REACT_APP_API_URL;
 
 export default function DishNewForm() {
 
-  const [selectedOption, setSelectedOption] = useState('');
-
-  const [dishes, setDishes] = useState({
+  const [newDish, setNewDish] = useState({
     name: '',
     calories: '',
     is_vegan: false,
     category: '',
     image_url: '',
     portions: '',
-    url: ''
+  
   });
 
+  const navigate = useNavigate();
+
   const handleTextChange = (event) => {
-    setDishes({ ...dishes, [event.target.id]: event.target.value });
+    setNewDish({ ...newDish, [event.target.id]: event.target.value });
   };
 
   const handleCheckboxChange = () => {
-    setDishes({ ...dishes, is_vegan: !dishes.is_vegan });
+    setNewDish({ ...newDish, is_vegan: !newDish.is_vegan });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Add your form submission logic here
-  };
-
-  const handleChange = (event) => {
-    setSelectedOption(event.target.value);
+    axios.post(`${API}/dishes`, newDish)
+      .then((res) => {
+        console.log(res.data)
+        navigate('/dishes');
+      })
+      .catch((error) => {
+        console.log("error:", error);
+      });
   };
 
   return (
@@ -38,7 +44,7 @@ export default function DishNewForm() {
         <label htmlFor="name">Name:</label>
         <input
           id="name"
-          value={dishes.name}
+          value={newDish.name}
           type="text"
           onChange={handleTextChange}
           placeholder="Name of Dish"
@@ -48,7 +54,7 @@ export default function DishNewForm() {
         <label htmlFor="calories">Calories:</label>
         <input
           id="calories"
-          value={dishes.calories}
+          value={newDish.calories}
           type="text"
           onChange={handleTextChange}
           placeholder="Number of calories in dish"
@@ -60,29 +66,28 @@ export default function DishNewForm() {
           id="is_vegan"
           type="checkbox"
           onChange={handleCheckboxChange}
-          checked={dishes.is_vegan}
+          checked={newDish.is_vegan}
         />
 
-
-<label htmlFor="categories">Categories:</label>
-        <select id="categories" value={selectedOption} onChange={handleChange}>
+        <label htmlFor="categories">Categories:</label>
+        <select id="category" value={newDish.category} onChange={handleTextChange}>
           <option value="">Select...</option>
-          <option value="Drinks">Drinks</option>
-          <option value="Lunch">Lunch</option>
-          <option value="Breakfast">Breakfast</option>
-          <option value="Snack">Snack</option>
-          <option value="Dessert">Dessert</option>
+          <option id="Drinks" value="Drinks">Drinks</option>
+          <option id="Lunch" value="Lunch">Lunch</option>
+          <option id="Breakfast" value="Breakfast">Breakfast</option>
+          <option id="Snack" value="Snack">Snack</option>
+          <option id="Dessert" value="Dessert">Dessert</option>
+          <option id="Dinner" value="Dinner">Dinner</option>
         </select>
-        <p>Selected option: {selectedOption}</p>
-
+        <p>Selected option: {newDish.category}</p>
 
         <label htmlFor="url">Image URL:</label>
         <input
-          id="url"
+          id="image_url"
           type="text"
           pattern="http[s]*://.+"
           required
-          value={dishes.url}
+          value={newDish.url}
           placeholder="http://"
           onChange={handleTextChange}
         />
@@ -91,7 +96,7 @@ export default function DishNewForm() {
         <input
           id="portions"
           type="text"
-          value={dishes.portions}
+          value={newDish.portions}
           placeholder="Number of portions"
           onChange={handleTextChange}
         />
