@@ -1,16 +1,31 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { MdDeleteOutline } from "react-icons/md";
+
+const API = process.env.REACT_APP_API_URL;
 
 export default function Dish({ dish }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleClick = () => {
     setIsFlipped(!isFlipped);
-  }
+  };
+
+  const deleteDish = () => {
+    axios
+      .delete(`${API}/dishes/${dish.id}`)
+      .then(() => {
+        window.location.reload();
+      })
+      .catch ((error) => {
+        console.log(error);
+      })
+  };
 
   return (
     <div
-      className={`relative bg-primary flex justify-center items-center rounded-full h-[400px] w-[400px] `}
+      className={`relative bg-primary flex justify-center items-center rounded-full h-[400px] w-[400px] shadow-2xl shadow-black `}
     >
       {!isFlipped && (
         <Link to={`${dish.image_url}`}>
@@ -39,7 +54,7 @@ export default function Dish({ dish }) {
               {dish.portions}
             </p>
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-2 items-center">
             <button
               onClick={handleClick}
               className="bg-secondary rounded-3xl p-2 text-sm text-primary font-bold w-24 hover:bg-gray hover:text-white"
@@ -52,6 +67,7 @@ export default function Dish({ dish }) {
             >
               Edit
             </Link>
+            <MdDeleteOutline onClick={deleteDish} className="text-secondary cursor-pointer hover:border-b-2 border-secondary" size={30} />
           </div>
         </div>
       )}
@@ -62,6 +78,7 @@ export default function Dish({ dish }) {
         >
           View Details
         </button>
+        
       )}
     </div>
   );

@@ -1,59 +1,92 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useState, useEffect } from "react";
+import { useParams, Link, useNavigate } from "react-router-dom";
 
 const API = process.env.REACT_APP_API_URL;
 
-export default function DishNewForm() {
-
-  const [newDish, setNewDish] = useState({
-    name: '',
-    calories: '',
-    is_vegan: false,
-    category: '',
-    image_url: '',
-    portions: '',
-  
-  });
-
+export default function EditNewDish() {
+  const { id } = useParams();
   const navigate = useNavigate();
 
+  const [editDish, setEditDish] = useState({
+    name: "",
+    calories: 0,
+    is_vegan: false,
+    category: "",
+    image_url: "",
+    portions: 0
+   
+  });
+
+  useEffect(() => {
+      axios
+      .get(`${API}/dishes/${id}`)
+      .then((response)=>{
+          console.log(response.data)
+        setEditDish(response.data)
+        console.log(editDish.name)
+      })
+      .catch((e)=>{
+        console.log(e)
+      })
+
+  },[id])
+  
+
   const handleTextChange = (event) => {
-    setNewDish({ ...newDish, [event.target.id]: event.target.value });
+    const { id, value } = event.target;
+    setEditDish((prevEditDish) => ({
+      ...prevEditDish,
+      [id]: value,
+    }));
   };
 
-  const handleCheckboxChange = () => {
-    setNewDish({ ...newDish, is_vegan: !newDish.is_vegan });
+  const handleCheckboxChange = (event) => {
+    setEditDish((prevEditDish) => ({
+      ...prevEditDish,
+      is_vegan: event.target.checked,
+    }));
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    axios.post(`${API}/dishes`, newDish)
-      .then(() => {
-        navigate('/dishes');
+  const updateDish = () => {
+    axios
+      .put(`${API}/dishes/${id}`, editDish)
+      .then((response) => {
+        console.log(response.data)
+       
+        setEditDish(response.data)
+       
+        navigate(`/dishes/${id}`);
       })
       .catch((error) => {
-        console.log("error:", error);
+         console.log(error);
       });
   };
 
+  // updateDish()
+  
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    updateDish();
+  };
+
   return (
-    <div className="New bg-primary shadow-2xl shadow-black rounded-full h-[50em] w-[50em] flex items-center justify-center ">
-      <form onSubmit={handleSubmit} className="flex flex-col ">
+    <div className="New">
+      <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
         <input
           id="name"
-          value={newDish.name}
+          value={editDish.name}
           type="text"
           onChange={handleTextChange}
           placeholder="Name of Dish"
           required
         />
 
-<label htmlFor="calories">Calories:</label>
+        <label htmlFor="calories">Calories:</label>
         <input
           id="calories"
-          value={newDish.calories}
+          value={editDish.calories}
           type="number"
           onChange={handleTextChange}
           placeholder="Number of calories in dish"
@@ -64,14 +97,14 @@ export default function DishNewForm() {
         <input
           type="checkbox"
           id="is_vegan"
-          checked={newDish.is_vegan}
+          checked={editDish.is_vegan}
           onChange={handleCheckboxChange}
         />
 
         <label htmlFor="category">Category:</label>
         <select
           id="category"
-          value={newDish.category}
+          value={editDish.category}
           onChange={handleTextChange}
         >
           <option value="">Select...</option>
@@ -88,7 +121,7 @@ export default function DishNewForm() {
           id="image_url"
           type="text"
           required
-          value={newDish.image_url}
+          value={editDish.image_url}
           placeholder="Enter dish image URL"
           onChange={handleTextChange}
         />
@@ -97,13 +130,19 @@ export default function DishNewForm() {
         <input
           id="portions"
           type="number"
-          value={newDish.portions}
+          value={editDish.portions}
           placeholder="Number of portions"
           onChange={handleTextChange}
         />
-        <br />
+
         <input type="submit" value="Submit" />
       </form>
+
+      <div>
+        <Link to={`/dishes/${id}`}>
+          <button>Nevermind!</button>
+        </Link>
+      </div>
     </div>
   );
 }

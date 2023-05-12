@@ -5,16 +5,30 @@ export default function Nav() {
     return (
       <nav className="bg-primary h-20 w-full text-white flex items-center justify-between">
         <div className="flex items-center ml-10 gap-4 min-w-[250px]">
-          <MdOutlineCircle className="border-2 border-secondary rounded-2xl bg-white" size={28}/>
-          <Link to="/" className="text-4xl font-bold hover:text-secondary">
+          <Link to={'/'}>
+            <MdOutlineCircle
+              className="rounded-2xl bg-white hover:bg-secondary hover:text-secondary"
+              size={28}
+            />
+          </Link>
+          <Link
+            to="/dishes"
+            className="text-4xl font-bold hover:text-secondary"
+          >
             The Table
           </Link>
         </div>
         <div className="mr-20 min-w-fit">
+          <Link to={"/"} className="font-semibold mx-4 hover:text-secondary">
+            Home
+          </Link>
           <Link to="/about" className="font-semibold mx-4 hover:text-secondary">
             About
           </Link>
-          <Link to="/dishes/new" className="font-semibold mx-4 hover:text-secondary">
+          <Link
+            to="/dishes/new"
+            className="font-semibold mx-4 hover:text-secondary"
+          >
             New Plate
           </Link>
         </div>

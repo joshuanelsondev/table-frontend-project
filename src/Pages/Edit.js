@@ -1,3 +1,7 @@
+import EditDishForm from '../Components/EditDishForm'
 export default function Edit() {
-  return <div></div>;
+  return <div>
+    
+  <EditDishForm/> 
+  </div>;
 }
