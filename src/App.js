@@ -7,7 +7,7 @@ import Home from "./Pages/Home";
 import Index from "./Pages/Index";
 import New from "./Pages/New";
 import Show from "./Pages/Show";
-import About from "./Pages/About";
+import About from "./Pages/About/About";
 import FourOFour from "./Pages/FourOFour";
 
 // COMPONENTS
