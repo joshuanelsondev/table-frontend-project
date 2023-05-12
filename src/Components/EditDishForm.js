@@ -22,29 +22,16 @@ export default function EditNewDish() {
       axios
       .get(`${API}/dishes/${id}`)
       .then((response)=>{
-        console.log(response.data)
+          console.log(response.data)
         setEditDish(response.data)
+        console.log(editDish.name)
       })
       .catch((e)=>{
         console.log(e)
       })
 
   },[id])
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await axios
-  //       .get(`${API}/dishes/${id}`)
-  //       .then((response)=>{
-  //         console.log(response.data)
-  //         setEditDish(response.data);
-  //       })
-       
-  //     } catch (error) {
-  //       navigate(`/not-found`);
-  //     }
-  //   };
-  //   fetchData();
-  // }, [id, navigate]);
+  
 
   const handleTextChange = (event) => {
     const { id, value } = event.target;
@@ -64,14 +51,20 @@ export default function EditNewDish() {
   const updateDish = () => {
     axios
       .put(`${API}/dishes/${id}`, editDish)
-      .then(() => {
+      .then((response) => {
+        console.log(response.data)
+       
+        setEditDish(response.data)
+       
         navigate(`/dishes/${id}`);
       })
       .catch((error) => {
-        console.error(error);
+         console.log(error);
       });
   };
 
+  // updateDish()
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     updateDish();
