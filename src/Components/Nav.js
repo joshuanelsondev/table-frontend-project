@@ -7,7 +7,7 @@ export default function Nav() {
         <div className="flex items-center ml-10 gap-4 min-w-[250px]">
           <Link to={'/'}>
             <MdOutlineCircle
-              className="border-2 border-secondary rounded-2xl bg-white hover:border-primary"
+              className="rounded-2xl bg-white hover:bg-secondary hover:text-secondary"
               size={28}
             />
           </Link>
