@@ -24,7 +24,7 @@ export default function EditNewDish() {
       .then((response)=>{
           console.log(response.data)
         setEditDish(response.data)
-        console.log(editDish.name)
+        console.log(response.data[0])
       })
       .catch((e)=>{
         console.log(e)
@@ -52,11 +52,8 @@ export default function EditNewDish() {
     axios
       .put(`${API}/dishes/${id}`, editDish)
       .then((response) => {
-        console.log(response.data)
-       
         setEditDish(response.data)
-       
-        navigate(`/dishes/${id}`);
+        navigate(`/dishes`);
       })
       .catch((error) => {
          console.log(error);
@@ -139,8 +136,8 @@ export default function EditNewDish() {
       </form>
 
       <div>
-        <Link to={`/dishes/${id}`}>
-          <button>Nevermind!</button>
+        <Link to={`/dishes`}>
+          <button>Back</button>
         </Link>
       </div>
     </div>

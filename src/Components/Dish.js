@@ -54,7 +54,7 @@ export default function Dish({ dish }) {
               {dish.portions}
             </p>
           </div>
-          <div className="flex gap-2 items-center">
+         <div className="flex gap-2 items-center">
             <button
               onClick={handleClick}
               className="bg-secondary rounded-3xl p-2 text-sm text-primary font-bold w-24 hover:bg-gray hover:text-white"
