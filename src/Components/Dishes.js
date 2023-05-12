@@ -10,7 +10,6 @@ export default function Dishes() {
    useEffect(() => {
         axios.get(`${API}/dishes`)
          .then((res) => {
-            console.log(res.data);
             setDishes(res.data.dishes);
          })
          .catch((error) => {

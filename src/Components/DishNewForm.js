@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const API = process.env.REACT_APP_API_URL;
@@ -29,8 +29,7 @@ export default function DishNewForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios.post(`${API}/dishes`, newDish)
-      .then((res) => {
-        console.log(res.data)
+      .then(() => {
         navigate('/dishes');
       })
       .catch((error) => {
