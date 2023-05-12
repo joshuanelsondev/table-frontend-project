@@ -11,7 +11,7 @@ import About from "./Pages/About";
 import FourOFour from "./Pages/FourOFour";
 
 // COMPONENTS
-import Nav from "./Pages/Nav";
+import Nav from "./Components/Nav";
 
 
 function App () {
