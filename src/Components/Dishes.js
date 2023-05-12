@@ -19,8 +19,7 @@ export default function Dishes() {
 
     return (
         <div className="">
-            <h1 className="text-3xl text-primary font-semibold m-8">My Table</h1>
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-y-8 mt-8 w-full place-items-center sm:grid-cols-1"> 
+            <div className="grid lg:grid-cols-3 py-8 md:grid-cols-2 gap-y-8 w-full place-items-center sm:grid-cols-1"> 
                 {dishes.map((dish) => {
                     return(
                     <Dish key={dish.id} dish={dish} />
