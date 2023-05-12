@@ -25,7 +25,7 @@ export default function Dish({ dish }) {
 
   return (
     <div
-      className={`relative bg-primary flex justify-center items-center rounded-full h-[400px] w-[400px] `}
+      className={`relative bg-primary flex justify-center items-center rounded-full h-[400px] w-[400px] shadow-2xl shadow-black `}
     >
       {!isFlipped && (
         <Link to={`${dish.image_url}`}>

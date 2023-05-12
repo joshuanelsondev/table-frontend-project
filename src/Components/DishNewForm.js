@@ -38,8 +38,8 @@ export default function DishNewForm() {
   };
 
   return (
-    <div className="New">
-      <form onSubmit={handleSubmit}>
+    <div className="New bg-primary shadow-2xl shadow-black rounded-full h-[50em] w-[50em] flex items-center justify-center ">
+      <form onSubmit={handleSubmit} className="flex flex-col ">
         <label htmlFor="name">Name:</label>
         <input
           id="name"

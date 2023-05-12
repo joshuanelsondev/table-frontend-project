@@ -1,6 +1,11 @@
 import DishNewForm from '../Components/DishNewForm'
 export default function New() {
-  return <div>
-  <DishNewForm />;
-  </div>
+  return (
+    <div>
+      <div className=' mt-10 h-full w-full flex justify-center items-center'>
+        <DishNewForm />
+      </div>
+    </div>
+  )
 }
+  
