@@ -16,7 +16,7 @@ export default function Dish({ dish }) {
     axios
       .delete(`${API}/dishes/${dish.id}`)
       .then(() => {
-
+        window.location.reload();
       })
       .catch ((error) => {
         console.log(error);
@@ -67,7 +67,7 @@ export default function Dish({ dish }) {
             >
               Edit
             </Link>
-            <MdDeleteOutline className="text-secondary cursor-pointer hover:border-b-2 border-secondary" size={30} />
+            <MdDeleteOutline onClick={deleteDish} className="text-secondary cursor-pointer hover:border-b-2 border-secondary" size={30} />
           </div>
         </div>
       )}
