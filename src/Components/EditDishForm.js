@@ -68,10 +68,13 @@ export default function EditNewDish() {
   };
 
   return (
-    <div className="New">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
+    <div className="Edit bg-primary shadow-2xl shadow-black rounded-full min-w-[30em] min-h-[30em] md:h-[40em] md:w-[40em] flex items-center justify-center sm:h-[38em] sm:w-[38em]">
+      <form onSubmit={handleSubmit} className="flex flex-col text-white">
+        <label htmlFor="name" className="font-bold text-xs mb-1">
+          Name
+        </label>
         <input
+          className="rounded-lg h-6 w-50 mb-4 focus:outline outline-[white] text-black text-sm pl-2"
           id="name"
           value={editDish.name}
           type="text"
@@ -80,8 +83,11 @@ export default function EditNewDish() {
           required
         />
 
-        <label htmlFor="calories">Calories:</label>
+        <label className="font-bold text-xs mb-1" htmlFor="calories">
+          Calories
+        </label>
         <input
+          className="rounded-lg h-6 w-50 mb-4 focus:outline outline-[white] text-black text-sm pl-2"
           id="calories"
           value={editDish.calories}
           type="number"
@@ -89,17 +95,23 @@ export default function EditNewDish() {
           placeholder="Number of calories in dish"
           required
         />
-
-        <label htmlFor="is_vegan">Is Vegan:</label>
-        <input
-          type="checkbox"
-          id="is_vegan"
-          checked={editDish.is_vegan}
-          onChange={handleCheckboxChange}
-        />
-
-        <label htmlFor="category">Category:</label>
+        <div className="flex items-center gap-2 mb-4">
+          <label className="font-bold text-xs" htmlFor="is_vegan">
+            Vegan
+          </label>
+          <input
+            type="checkbox"
+            id="is_vegan"
+            checked={editDish.is_vegan}
+            onChange={handleCheckboxChange}
+            className="cursor-pointer"
+          />
+        </div>
+        <label className="font-bold text-xs mb-1" htmlFor="category">
+          Category
+        </label>
         <select
+          className="rounded-lg h-6 w-50 mb-4 cursor-pointer focus:outline outline-[white] focus:bg-white text-primary font-bold text-sm pl-2"
           id="category"
           value={editDish.category}
           onChange={handleTextChange}
@@ -111,10 +123,14 @@ export default function EditNewDish() {
           <option value="Snack">Snack</option>
           <option value="Dessert">Dessert</option>
           <option value="Dinner">Dinner</option>
+          <option value="Other">Other</option>
         </select>
 
-        <label htmlFor="image_url">Image URL:</label>
+        <label className="font-bold text-xs mb-1" htmlFor="image_url">
+          Image URL
+        </label>
         <input
+          className="rounded-lg h-6 w-50 mb-4 focus:outline outline-[white] text-black text-sm pl-2"
           id="image_url"
           type="text"
           required
@@ -123,8 +139,11 @@ export default function EditNewDish() {
           onChange={handleTextChange}
         />
 
-        <label htmlFor="portions">Portions:</label>
+        <label className="font-bold text-xs mb-1" htmlFor="portions">
+          Portions
+        </label>
         <input
+          className="rounded-lg h-6 w-50 mb-4 focus:outline outline-[white] text-black text-sm pl-2"
           id="portions"
           type="number"
           value={editDish.portions}
@@ -132,14 +151,12 @@ export default function EditNewDish() {
           onChange={handleTextChange}
         />
 
-        <input type="submit" value="Submit" />
+        <input
+          type="submit"
+          value="Save"
+          className="bg-secondary rounded-3xl p-2 mt-4 text-sm text-primary font-bold w-24 cursor-pointer hover:bg-gray hover:text-white"
+        />
       </form>
-
-      <div>
-        <Link to={`/dishes`}>
-          <button>Back</button>
-        </Link>
-      </div>
     </div>
   );
 }

@@ -12,7 +12,7 @@ export default function New() {
       <div className=" mt-10 h-full w-full flex justify-center items-center">
         <DishNewForm  />
       </div>
-      <Link to={'/dishes'} className='absolute bottom-0 md:left-8 sm:left-2 flex items-center justify-center bg-primary w-20 h-8 rounded-2xl pr-2 text-white font-bold hover:text-secondary'>
+      <Link to={'/dishes'} className='absolute bottom-0 md:left-8 sm:left-2 flex items-center justify-center bg-primary w-20 h-8 rounded-2xl pr-2 text-white font-bold hover:bg-gray hover:text-primary'>
         <MdChevronLeft size={20} />
         Back
       </Link>

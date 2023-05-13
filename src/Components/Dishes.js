@@ -18,14 +18,12 @@ export default function Dishes() {
    }, []);
 
     return (
-        <div className="">
-            <div className="grid lg:grid-cols-3 py-8 md:grid-cols-2 gap-y-8 w-full place-items-center sm:grid-cols-1"> 
-                {dishes.map((dish) => {
-                    return(
-                    <Dish key={dish.id} dish={dish} />
-                    )
-                })}
-            </div>
+      <div className="">
+        <div className="grid lg:grid-cols-3 py-8 md:grid-cols-2 sm:grid-cols-1 gap-y-8 w-full place-items-center ">
+          {dishes.map((dish) => {
+            return <Dish key={dish.id} dish={dish} />;
+          })}
         </div>
-    )
+      </div>
+    );
 }
