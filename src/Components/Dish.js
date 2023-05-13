@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { MdDeleteOutline } from "react-icons/md";
+import { MdLaunch } from "react-icons/md";
+
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -39,12 +41,15 @@ export default function Dish({ dish }) {
 
       {isFlipped && (
         <div className="absolute flex flex-col items-center gap-4">
-          <h2 className="font-bold text-xl text-white">{dish.name}</h2>
+          <h2 className="font-bold text-xl text-white flex items-center gap-1">
+            {dish.name}
+              <Link to={`/dishes/${dish.id}`}>
+                <MdLaunch className="cursor-pointer hover:text-secondary" size={14} />
+              </Link>
+          </h2>
           <div className="text-white font-semibold">
             <p>{dish.category}</p>
-            {dish.is_vegan && (
-              <p>Vegan</p>
-            )}
+            {dish.is_vegan && <p>Vegan</p>}
             <p>
               <span className="text-secondary font-bold">Calories: </span>
               {dish.calories}
@@ -54,7 +59,7 @@ export default function Dish({ dish }) {
               {dish.portions}
             </p>
           </div>
-         <div className="flex gap-2 items-center">
+          <div className="flex gap-2 items-center">
             <button
               onClick={handleClick}
               className="bg-secondary rounded-3xl p-2 text-sm text-primary font-bold w-24 hover:bg-gray hover:text-white"
@@ -67,7 +72,11 @@ export default function Dish({ dish }) {
             >
               Edit
             </Link>
-            <MdDeleteOutline onClick={deleteDish} className="text-secondary cursor-pointer hover:border-b-2 border-secondary" size={30} />
+            <MdDeleteOutline
+              onClick={deleteDish}
+              className="text-secondary cursor-pointer hover:border-b-2 border-secondary"
+              size={30}
+            />
           </div>
         </div>
       )}
@@ -78,7 +87,6 @@ export default function Dish({ dish }) {
         >
           View Details
         </button>
-        
       )}
     </div>
   );
