@@ -38,7 +38,7 @@ export default function DishNewForm() {
   };
 
   return (
-    <div className="New bg-primary fil shadow-2xl shadow-black rounded-full min-w-[30em] min-h-[30em] md:h-[40em] md:w-[40em] flex items-center justify-center sm:h-[38em] sm:w-[38em] ">
+    <div className="New bg-primary shadow-2xl shadow-black rounded-full min-w-[30em] min-h-[30em] md:h-[40em] md:w-[40em] flex items-center justify-center sm:h-[38em] sm:w-[38em]">
       <form onSubmit={handleSubmit} className="flex flex-col text-white">
         <label className="font-bold text-xs mb-1" htmlFor="name">
           Name
@@ -116,11 +116,11 @@ export default function DishNewForm() {
           value={newDish.portions}
           onChange={handleTextChange}
         />
-        <br />
+  
         <input
           type="submit"
           value="Save"
-          className="bg-secondary rounded-3xl p-2 text-sm text-primary font-bold w-24 cursor-pointer hover:bg-gray hover:text-white"
+          className="bg-secondary rounded-3xl p-2 mt-4 text-sm text-primary font-bold w-24 cursor-pointer hover:bg-gray hover:text-white"
         />
       </form>
     </div>
