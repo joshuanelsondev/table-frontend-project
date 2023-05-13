@@ -120,7 +120,7 @@ export default function DishNewForm() {
         <input
           type="submit"
           value="Save"
-          className="bg-secondary rounded-3xl p-2 mt-4 text-sm text-primary font-bold w-24 cursor-pointer hover:bg-gray hover:text-white"
+          className="bg-secondary rounded-3xl p-2 mt-4 text-sm text-primary font-bold h-8 w-24 cursor-pointer hover:bg-gray hover:text-white"
         />
       </form>
     </div>

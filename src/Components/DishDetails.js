@@ -34,7 +34,7 @@ export default function DishDetails() {
 
   return (
     <div
-      className={`relative bg-primary flex justify-center items-center rounded-full h-[400px] w-[400px] shadow-2xl shadow-black `}
+      className={`relative bg-primary flex justify-center items-center rounded-full mt-10 md:h-[40em] md:w-[40em] sm:h-[30em] sm:w-[30em] shadow-2xl shadow-black `}
     >
       <div className="absolute flex flex-col items-center gap-4">
         <h2 className="font-bold text-xl text-white flex items-center gap-1">
