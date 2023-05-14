@@ -1,8 +1,9 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import DishNewForm from '../Components/DishNewForm'
 import { MdChevronLeft } from "react-icons/md";
 
 export default function New() {
+  const navigate = useNavigate();
 
   return (
     <div className="relative">
@@ -12,10 +13,10 @@ export default function New() {
       <div className=" mt-10 h-full w-full flex justify-center items-center">
         <DishNewForm  />
       </div>
-      <Link to={'/dishes'} className='absolute bottom-0 md:left-8 sm:left-2 flex items-center justify-center bg-primary w-20 h-8 rounded-2xl pr-2 text-white font-bold hover:bg-gray hover:text-primary'>
+      <button onClick={() => navigate(-1)} className='absolute bottom-0 md:left-8 sm:left-2 flex items-center justify-center bg-primary w-20 h-8 rounded-2xl pr-2 text-white font-bold hover:bg-gray hover:text-primary'>
         <MdChevronLeft size={20} />
         Back
-      </Link>
+      </button>
     </div>
   );
 }
