@@ -1,5 +1,6 @@
 # Welcome to The Table Fontend Repo 
 
+[Netlify Link](thetable-app.netlify.app)
 ## Table of Contents
 - _Technologies used_
 - _Frontend Dependencies_
@@ -21,7 +22,8 @@ git clone [The Table Backend Repo](https://github.com/joshuanelsondev/table-fron
 - Tailwind CSS
 - Canva (for creating beautiful designs)
 
-### Frontend Dependencies:
+
+### Frontend Dependencies: 
 - react: ^17.0.2
 - react-dom: ^17.0.2
 - react-router-dom: ^5.3.0
