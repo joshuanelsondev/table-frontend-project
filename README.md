@@ -48,6 +48,7 @@ react-dom
 - Define the required environment variables, such as the database connection string, API keys, etc.
 - gitnore which allows you to specify files or directories that should be excluded from version control. 
 
+The Table frontend will run on [The Table](http://localhost:3000)
 
 # License
 This project is licensed under [Pursuit](https://www.pursuit.org/)
