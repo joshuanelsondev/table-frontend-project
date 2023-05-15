@@ -1,6 +1,6 @@
 # Welcome to The Table Fontend Repo 
 
-[Netlify Link](thetable-app.netlify.app)
+[Netlify Link](https://thetable-app.netlify.app/)
 ## Table of Contents
 - _Technologies used_
 - _Frontend Dependencies_
