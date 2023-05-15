@@ -36,4 +36,4 @@ react-dom
 
 
 # License
-This project is licensed under [Pursuit] (https://www.pursuit.org/)
+This project is licensed under [Pursuit](https://www.pursuit.org/)
