@@ -1,6 +1,8 @@
 # Welcome to The Table Fontend Repo 
 
 [Netlify Link](https://thetable-app.netlify.app/)
+
+![Index Page View](./src/images/IndexScreenshot.png)
 ## Table of Contents
 - _Technologies used_
 - _Frontend Dependencies_
