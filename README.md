@@ -12,8 +12,8 @@
 The Table Potluck App leverages the following technologies and frameworks:
 
 ## [Github](https://github.com/)
-### Clone this repository:
-git clone [The Table Backend Repo](https://github.com/joshuanelsondev/table-frontend-project.git)
+### Backend Repo:
+[The Table Backend Repo](https://github.com/joshuanelsondev/table-backend-project)
 
 ## Frontend Frame work
 - React.js
