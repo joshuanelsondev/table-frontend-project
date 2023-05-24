@@ -10,11 +10,11 @@ export default function EditNewDish() {
 
   const [editDish, setEditDish] = useState({
     name: "",
-    calories: 0,
+    calories: "",
     is_vegan: false,
     category: "",
     image_url: "",
-    portions: 0
+    portions: ""
    
   });
 

@@ -4,9 +4,13 @@
 
 ![Index Page View](./src/images/IndexScreenshot.png)
 ## Table of Contents
-- _Technologies used_
-- _Frontend Dependencies_
-- _License_
+- [Technologies used](#technologies-used)
+- [Frontend Dependencies](#frontend-dependencies)
+- [Github](#github)
+- [Frontend Frame work](#frontend-frame-work)
+- [Frontend Dependencies](#frontend-dependencies)
+- [Installation](#installation)
+- [License](#license)
 
 ##  Technologies Used
 The Table Potluck App leverages the following technologies and frameworks:
@@ -19,8 +23,6 @@ The Table Potluck App leverages the following technologies and frameworks:
 - React.js
 - React Router
 - Axios
-
-
 - Tailwind CSS
 - Canva (for creating beautiful designs)
 
@@ -35,12 +37,11 @@ react-dom
 
 
 
-## Installing dependencies frontend
+# Installation
  - npm install react react-dom 
  - npm i react-router-dom axios  
  - tailwindcss @tailwindcss/postcss7-compat postcss autoprefixer cross-env --save
 
-# Frontend dependencies 
  ## cd client/the table frontend repo  
  - npm install
 
